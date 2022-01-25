@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <!-- 
+        The tile of your project -->
+        <title></title>
+        <!-- 
+        Styling the index page in terms of grids -->
+        <link rel="stylesheet" href="index.css"/>
+        <!-- 
+        Styling the index page in terms of grids -->
+        <link id="theme_css" rel="stylesheet" href="../../../outlook/v/code/theme.css"/>
+        
+        <script type="module">
+            //
+            //Importing this file boot straps the outlook applicaton
+            import tracker from "./tracker.js";
+            //
+            //Make class tracker public.
+            window.tracker=tracker;
+            //
+            //This import resolves the app class reference
+            import {app} from "../../../outlook/v/code/app.js";
+            // 
+            //Make the app public to resolve the onclick listener 
+            //at the login button.
+            window.app=app;
+            //
+            //Resolve the crud namespace reference required by the 
+            //crud page.
+            import * as crud from "../../../outlook/v/code/crud.js"
+            //
+            //Make the namespace public 
+            window.crud=crud;  
+        </script>
+        
+        <!-- Marker for styling columns -->
+        <style id="columns"></style>
+      
+    </head>
+    
+    <body>
+      <div class="header">
+          <!--
+          Company logo -->
+          <div id="logo">
+                <div>
+                    <img src="images/mutall_tracker_logo.png" height="50" width="100">
+                </div>
+                <select id="selection" onchange="tracker.current.change_subject(this)">
+                </select>
+          </div>
+          <div id="company">
+              TRACKER
+          </div>
+      </div>
+      <div id="why">Why</div>
+      <div id="services">Services
+      </div>
+      <div id="content">
+            Content
+            <table>
+                <thead></thead>
+                <tbody></tbody>    
+            </table>
+      </div>
+      <div id="welcome">
+          
+          Please <button onclick="app.current.login()">login</button> to access 
+          various services
+          
+          
+      </div>
+      <div id="whatsup">Whatsup</div>
+      <div class="footer">
+          <div id="developer">
+              <img src="images/me.jpg" alt="developer's image" class="img_dev">
+          </div>
+          <div id="signature">Developed by: Daniel Kaniu</div>
+          <div id="company">Mutall Data Co.</div>
+      </div>
+    </body>
+</html>
